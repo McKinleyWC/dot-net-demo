@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DALTests", "DALTests\DALTes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dot-net-angular-web-app", "dot-net-angular-web-app\dot-net-angular-web-app.csproj", "{1FBF677B-3436-4503-A673-879BA1CCC6C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication2", "WebApplication2\WebApplication2.csproj", "{5B287F51-1DAF-49A3-B13C-C4946F25F8BD}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{1FBF677B-3436-4503-A673-879BA1CCC6C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FBF677B-3436-4503-A673-879BA1CCC6C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FBF677B-3436-4503-A673-879BA1CCC6C3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5B287F51-1DAF-49A3-B13C-C4946F25F8BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5B287F51-1DAF-49A3-B13C-C4946F25F8BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5B287F51-1DAF-49A3-B13C-C4946F25F8BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5B287F51-1DAF-49A3-B13C-C4946F25F8BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

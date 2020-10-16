@@ -4,23 +4,47 @@
 
 <p>This component demonstrates fetching data from the server through an API.</p>
 
-<p *ngIf="!forecasts"><em>Loading...</em></p>
+<p *ngIf="!results"><em>Loading...</em></p>
 
-<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="forecasts">
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="results">
   <thead>
     <tr>
-      <th>Date</th>
-      <th>Temp. (C)</th>
-      <th>Temp. (F)</th>
-      <th>Summary</th>
+      <th>Resource Id</th>
+      <th>Limit</th>
+      <th>Total</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let forecast of forecasts">
-      <td>{{ forecast.date }}</td>
-      <td>{{ forecast.temperatureC }}</td>
-      <td>{{ forecast.temperatureF }}</td>
-      <td>{{ forecast.summary }}</td>
+    <tr *ngFor="let result of results">
+      <td>{{ result.resource_id }}</td>
+      <td>{{ result.limit }}</td>
+      <td>{{ result.total }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<p *ngIf="!results"><em>Loading...</em></p>
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="results">
+  <thead>
+    <tr>
+      <th>$1 Bills</th>
+      <th>$5 Bills</th>
+      <th>$10 Bills</th>
+      <th>$20 Bills</th>
+      <th>$50 Bills</th>
+      <th>$100 Bills</th>
+      <th>Fiscal Year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let record of results[0].records">
+      <td>{{ record._1Bills }}</td>
+      <td>{{ record._5Bills }}</td>
+      <td>{{ record._10Bills }}</td>
+      <td>{{ record._20Bills }}</td>
+      <td>{{ record._50Bills }}</td>
+      <td>{{ record._100Bills }}</td>
+      <td>{{ record.fiscalYear }}</td>
     </tr>
   </tbody>
 </table>

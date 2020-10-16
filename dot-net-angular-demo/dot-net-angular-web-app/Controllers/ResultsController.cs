@@ -15,7 +15,7 @@ namespace DAL.Controllers
         {
             var results = SqlUtils.GetResults();
             results[0].fields = SqlUtils.GetFields(results[0].resource_id);
-            results[0].records = SqlUtils.GetRecords(results[0].resource_id);
+            results[0].records = SqlUtils.GetRecords(results[0].resource_id).OrderBy(r => r._id).ToList();
             results[0]._links = SqlUtils.GetLinks(results[0].resource_id);
             
             return results;
