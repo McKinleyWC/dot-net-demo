@@ -6,27 +6,28 @@ namespace DAL
 {
     public class APIClient
     {
-        public static List<AnnualProdReport> GetAnnualProdReportFromAPI(string baseUri, string requestUri)
+        public static AnnualProdReport GetAnnualProdReportFromAPI(string baseUri, string requestUri)
         {
-            var theReports = new List<AnnualProdReport>();
+            var theReport = new AnnualProdReport();
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("https://inventory.data.gov/api/3/");
+                client.BaseAddress = new Uri(baseUri);
                 //HTTP GET
-                var responseTask = client.GetAsync("action/datastore_search?resource_id=72a33ebb-3efe-455b-9e41-0733aaed7780");
+                var responseTask = client.GetAsync(requestUri);
                 responseTask.Wait();
 
                 var result = responseTask.Result;
                 if (result.IsSuccessStatusCode)
                 {
 
-                    var readTask = result.Content.ReadAsAsync<List<AnnualProdReport>>();
+                    var readTask = result.Content.ReadAsAsync<AnnualProdReport>();
                     readTask.Wait();
 
-                    theReports = readTask.Result;
+                    theReport = readTask.Result;
+                    AnnualProdReport.PopulateChildrenWithId(ref theReport);
                 }
             }
-            return theReports;
+            return theReport;
         }
     }
 }
